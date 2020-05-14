@@ -1,2 +1,1 @@
-# projectb
-Materia Ing de Software
+# projectb's README
