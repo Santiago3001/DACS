@@ -18,6 +18,4 @@
     npm start
     
     
-    Local: http://localhost:3000
-    network http:192.168.5.107:3000
     
