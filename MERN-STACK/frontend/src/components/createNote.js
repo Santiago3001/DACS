@@ -19,12 +19,12 @@ export default class CreateNote extends Component {
 
     async componentDidMount() {
 
-       const res = await axios.get('http://localhost:8080/api/users');
+       const res = await axios.get('https://grupo5-backend-mern.herokuapp.com/api/users');
        this.setState({users: res.data.map(user => user.username ),
        userSelected: res.data[0].username
        })
         if(this.props.match.params.id) {
-           const res = await axios.get('http://localhost:8080/api/notes/' + this.props.match.params.id);
+           const res = await axios.get('https://grupo5-backend-mern.herokuapp.com/api/notes/' + this.props.match.params.id);
 
             this.setState({
                 title:res.data.title,
@@ -46,10 +46,10 @@ export default class CreateNote extends Component {
             author: this.state.userSelected
         };
         if(this.state.editing) {
-            await axios.put('http://localhost:8080/api/notes/' + this.state._id, newNote);
+            await axios.put('https://grupo5-backend-mern.herokuapp.com/api/notes/' + this.state._id, newNote);
 
         } else {
-            await axios.post('http://localhost:8080/api/notes', newNote);
+            await axios.post('https://grupo5-backend-mern.herokuapp.com/api/notes', newNote);
         }
         window.location.href = '/';
 
